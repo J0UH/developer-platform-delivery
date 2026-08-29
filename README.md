@@ -24,7 +24,7 @@ The platform work spanned several generations of services and deployment models.
 ## System shape
 
 ```mermaid
-flowchart LR
+flowchart TD
     n0["Product teams"]
     n1["Platform contracts"]
     n2["Build and test"]
