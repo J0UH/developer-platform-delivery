@@ -1,16 +1,18 @@
+[← All systems](https://github.com/J0UH) · [Product engineering](https://github.com/J0UH/product-engineering)
+
 <p align="center">
-  <img src="assets/hero.png" alt="Developer platform and delivery system illustration" width="100%" />
+  <img src="assets/hero.webp" alt="A forward pipeline crosses four release gates beside a complete orange rollback path" width="100%" />
 </p>
 
 # Developer platform and delivery
 
 Delivery infrastructure is product infrastructure. Teams move faster when APIs, environments, deployments, logs, decisions, and recovery paths form one understandable system.
 
-[Discuss a similar system](mailto:ju@jomena.group?subject=Discuss%20Developer%20platform%20and%20delivery) | [Book a technical call](mailto:ju@jomena.group?subject=Book%20a%20technical%20call%20about%20Developer%20platform%20and%20delivery)
-
 ## The engineering problem
 
 The platform work spanned several generations of services and deployment models. The challenge was reducing one-off knowledge while keeping enough flexibility for experiments, migrations, and live financial products.
+
+
 
 ## What the system covers
 
@@ -25,17 +27,17 @@ The platform work spanned several generations of services and deployment models.
 
 ```mermaid
 flowchart TD
-    n0["Product teams"]
-    n1["Platform contracts"]
-    n2["Build and test"]
-    n3["Deployment"]
-    n4["Runtime services"]
-    n5["Observability"]
-    n0 --> n1
-    n1 --> n2
-    n2 --> n3
-    n3 --> n4
-    n4 --> n5
+accTitle: Developer platform and delivery
+accDescr: Product changes must satisfy a platform contract and tests before deployment. Runtime health determines whether the release is supported or travels an explicit rollback path.
+    change["Product change"] --> contract["Platform contract"]
+    contract --> test{"Build and tests pass?"}
+    test -->|No| change
+    test -->|Yes| deploy["Controlled deployment"]
+    deploy --> observe["Runtime observation"]
+    observe --> healthy{"Healthy?"}
+    healthy -->|No| rollback["Rollback path"]
+    rollback --> change
+    healthy -->|Yes| release["Supported release"]
 ```
 
 ## Build notes
@@ -44,8 +46,8 @@ flowchart TD
 - Make the supported path easy and the exceptional path visible.
 - Optimise for recovery time, not only deployment speed.
 
-<sub>Built under the Aryze umbrella. The underlying source and company IP remain private and owned by Aryze. Delivery involved people across engineering, product, operations, compliance, and design. Open-source foundations retain their original attribution and licences.</sub>
+<sub>Public overview only. Source code, customer data, credentials, and private operating details are not included.</sub>
 
 ## Talk through a similar problem
 
-If you are trying to build, untangle, or ship a system in this area, [send me a note](mailto:ju@jomena.group?subject=I%20need%20help%20with%20Developer%20platform%20and%20delivery). If the problem needs a deeper technical conversation, [book a call by email](mailto:ju@jomena.group?subject=Book%20a%20technical%20call%20about%20Developer%20platform%20and%20delivery).
+Working on something similar? [Tell me about it](mailto:ju@jomena.group?subject=Developer%20platform%20and%20delivery).
