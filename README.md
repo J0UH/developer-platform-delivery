@@ -4,7 +4,7 @@
 
 The APIs, deployment paths, and recovery tools that help a product keep working as it changes.
 
-<img src="assets/hero-v2.webp" alt="Developer platform and delivery illustrated as a crafted architectural model, with exposed sketch and structural framing" width="100%" />
+<img src="assets/hero-v3.webp" alt="A graphite delivery pipeline passes through three inspection gates above an orange return path" width="100%" />
 
 A product accumulates operational knowledge quickly. Someone knows how an environment was configured, another person remembers a migration, and a release depends on a sequence of steps that is not quite written down.
 
