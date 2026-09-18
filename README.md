@@ -1,34 +1,26 @@
-[← All work](https://github.com/J0UH) · [Product engineering](https://github.com/J0UH/product-engineering)
+[← Profile](https://github.com/J0UH) · [Product engineering](https://github.com/J0UH/product-engineering)
 
 # Developer platform and delivery
 
-The APIs, deployment paths, and recovery tools that help a product keep working as it changes.
+APIs, deployment paths, and recovery tools that keep a product working as it changes.
 
-<img src="assets/hero-v3.webp" alt="A graphite delivery pipeline passes through three inspection gates above an orange return path" width="100%" />
+*Professional platform work. Implementation stays with the companies that own it — [about these pages](https://github.com/J0UH/J0UH/blob/main/ABOUT.md).*
 
-A product accumulates operational knowledge quickly. Someone knows how an environment was configured, another person remembers a migration, and a release depends on a sequence of steps that is not quite written down.
+## Problem
 
-The platform work spans different generations of services and deployment models. My focus is on turning that scattered knowledge into an understandable path for the next change.
+A product accumulates operational knowledge quickly — how an environment was configured, which migration mattered, which release steps were never written down. The next change should not require rediscovering the whole platform.
 
-## A release includes the way back
+## What I built
 
-Builds and tests are part of delivery, but the work continues after deployment. Logs and runtime observations need to show whether the change is healthy. If it is not, the recovery path should be as deliberate as the release.
+API and service foundations, environment and deployment automation, integration and migration tooling, observability, and explicit recovery paths. The aim is an understandable path from a product change to a supported release — including the way back when it is not healthy.
 
-That shapes the API foundations, environment automation, integration tooling, and migration support. Architectural decisions also need a written reason when they change what future work will look like.
+## Key decisions
 
-I like infrastructure that helps people move with confidence because they can see what is happening and know how to recover. The unusual case should still be possible, but it should not require rediscovering the whole platform.
+- **A release includes the way back.** Builds and tests matter; so do logs, runtime health, and a deliberate rollback path.
+- **Write down architectural decisions that change future work.** Platform contracts should be visible, not tribal.
+- **Unusual cases stay possible without rediscovery.** Confidence comes from seeing what is happening and knowing how to recover.
 
-## What the work covers
-
-- API and service foundations
-- Architectural decision records
-- Environment and deployment automation
-- Proxies, integration tools, and migration support
-- Bug and release workflows
-- Observability and operational recovery
-
-<details>
-<summary>A closer look at the technical flow</summary>
+## Architecture
 
 ```mermaid
 flowchart TD
@@ -45,13 +37,18 @@ accDescr: Product changes must satisfy a platform contract and tests before depl
     healthy -->|Yes| release["Supported release"]
 ```
 
-</details>
+## What the work covers
+
+- API and service foundations
+- Architectural decision records
+- Environment and deployment automation
+- Proxies, integration tools, and migration support
+- Bug and release workflows
+- Observability and operational recovery
 
 ## Related work
 
-- [Workflow automation infrastructure](https://github.com/J0UH/workflow-automation-infrastructure)
 - [Product engineering](https://github.com/J0UH/product-engineering)
+- [Digital sales systems](https://github.com/J0UH/digital-sales-systems)
 
 Working on a similar problem? [Tell me what you are building](mailto:ju@jomena.group?subject=Developer%20platform%20and%20delivery).
-
-*This is a public account of the work. Source code and private operating details are not included in this repository.*
